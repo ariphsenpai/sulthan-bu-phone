@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sulthan BU Phone - Jual beli HP baru & bekas, COD 24 jam, gestun all paylater & kartu kredit. Semarang.">
+  <title>Sulthan BU Phone - Jual Beli HP Baru & Bekas | COD 24 Jam | Gestun All Paylater</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --primary: #1a1a2e;
+      --accent: #e94560;
+      --accent2: #0f3460;
+      --gold: #f5a623;
+      --bg: #0f0f1a;
+      --card: #1a1a2e;
+      --text: #ffffff;
+      --muted: #8892b0;
+      --radius: 16px;
+      --shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* === NAVBAR === */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(15,15,26,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
+    }
+    .logo span { color: var(--text); -webkit-text-fill-color: var(--text); font-weight: 400; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .btn-wa-nav {
+      background: #25D366;
+      color: #fff !important;
+      padding: 8px 20px;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+    .btn-wa-nav:hover { background: #1da851; color: #fff !important; }
+
+    @media (max-width: 768px) {
+      .nav-links a:not(.btn-wa-nav) { display: none; }
+    }
+
+    /* === HERO === */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 24px 60px;
+      position: relative;
+      text-align: center;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse at 30% 20%, rgba(233,69,96,0.12), transparent 50%),
+                  radial-gradient(ellipse at 70% 80%, rgba(15,52,96,0.15), transparent 50%);
+      pointer-events: none;
+    }
+    .hero-content { max-width: 800px; position: relative; z-index: 1; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(233,69,96,0.1);
+      border: 1px solid rgba(233,69,96,0.3);
+      color: var(--accent);
+      padding: 8px 18px;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    .hero-badge .dot {
+      width: 8px; height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+    .hero h1 {
+      font-size: clamp(2rem, 6vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      letter-spacing: -1.5px;
+    }
+    .hero h1 .grad {
+      background: linear-gradient(135deg, var(--accent), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto 32px;
+    }
+    .hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #c81d3a);
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.3s;
+      box-shadow: 0 4px 20px rgba(233,69,96,0.4);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(233,69,96,0.5); }
+    .btn-secondary {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2); }
+
+    /* === FEATURES STRIP === */
+    .features {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 40px 24px;
+      flex-wrap: wrap;
+      background: rgba(255,255,255,0.02);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    .feature-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .feature-icon.f1 { background: rgba(37,211,102,0.1); }
+    .feature-icon.f2 { background: rgba(245,166,35,0.1); }
+    .feature-icon.f3 { background: rgba(15,52,96,0.3); }
+    .feature-icon.f4 { background: rgba(233,69,96,0.1); }
+
+    /* === SECTION === */
+    section { padding: 80px 24px; max-width: 1200px; margin: 0 auto; }
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .section-title h2 {
+      font-size: clamp(1.5rem, 4vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+    }
+    .section-title p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    /* === BRAND GRID === */
+    .brand-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 16px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .brand-card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: var(--radius);
+      padding: 28px 20px;
+      text-align: center;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    .brand-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(233,69,96,0.3);
+      box-shadow: 0 8px 30px rgba(233,69,96,0.1);
+    }
+    .brand-card .brand-logo {
+      width: 56px; height: 56px;
+      margin: 0 auto 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.03);
+    }
+    .brand-card .brand-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* === SERVICES === */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .service-card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--gold));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .service-card:hover::before { opacity: 1; }
+    .service-card:hover { border-color: rgba(255,255,255,0.1); }
+    .service-card .svc-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+    .service-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .service-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .service-card .svc-tag {
+      display: inline-block;
+      margin-top: 14px;
+      background: rgba(233,69,96,0.1);
+      color: var(--accent);
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    /* === GESTUN PAYLATER === */
+    .paylater-section {
+      background: linear-gradient(135deg, rgba(15,52,96,0.3), rgba(233,69,96,0.1));
+      border-radius: 24px;
+      padding: 48px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .paylater-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .paylater-item {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 16px 12px;
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .paylater-item:hover {
+      background: rgba(255,255,255,0.06);
+      transform: translateY(-2px);
+    }
+
+    /* === MARKETING / TESTIMONIAL === */
+    .marketing-strip {
+      text-align: center;
+      padding: 60px 24px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .marketing-strip h2 {
+      font-size: clamp(1.4rem, 4vw, 2.2rem);
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+    .marketing-strip h2 .grad {
+      background: linear-gradient(135deg, var(--accent), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .marketing-strip p {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .testimonial {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+    .testimonial .stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 12px; }
+    .testimonial p { color: var(--muted); font-size: 0.9rem; margin-bottom: 16px; }
+    .testimonial .author { font-weight: 600; font-size: 0.85rem; }
+    .testimonial .author span { color: var(--muted); font-weight: 400; }
+
+    /* === CTA === */
+    .cta-section {
+      text-align: center;
+      padding: 80px 24px;
+      background: linear-gradient(135deg, var(--accent2), var(--card));
+      border-radius: 24px;
+      max-width: 1100px;
+      margin: 0 auto 60px;
+    }
+    .cta-section h2 {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .cta-section p {
+      color: var(--muted);
+      margin-bottom: 28px;
+      font-size: 1.05rem;
+    }
+
+    /* === FOOTER === */
+    footer {
+      background: rgba(0,0,0,0.3);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 48px 24px 24px;
+      text-align: center;
+    }
+    .footer-content { max-width: 800px; margin: 0 auto; }
+    .footer-logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+    }
+    .footer-addr {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--text); }
+    .footer-copy {
+      color: rgba(136,146,176,0.5);
+      font-size: 0.8rem;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* === FLOATING WA === */
+    .wa-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 60px;
+      height: 60px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      z-index: 999;
+      transition: all 0.3s;
+      animation: waPulse 2s infinite;
+    }
+    @keyframes waPulse {
+      0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+      50% { box-shadow: 0 4px 30px rgba(37,211,102,0.6); }
+    }
+    .wa-float:hover { transform: scale(1.1); }
+    .wa-float svg { width: 30px; height: 30px; fill: #fff; }
+
+    /* === ANIMATIONS === */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="#" class="logo">Sulthan BU<span> Phone</span></a>
+    <div class="nav-links">
+      <a href="#brands">Brand</a>
+      <a href="#services">Layanan</a>
+      <a href="#gestun">Gestun</a>
+      <a href="#lokasi">Lokasi</a>
+      <a href="https://wa.me/6281585857577" target="_blank" class="btn-wa-nav">Chat WhatsApp</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Buka 24 Jam &middot; COD Seluruh Semarang
+      </div>
+      <h1>
+        Beli HP <span class="grad">Baru & Bekas</span><br>
+        Gampang, Aman, Terpercaya
+      </h1>
+      <p>
+        Jual beli hp baru & bekas dengan harga terbaik. COD 24 jam dimana saja di Semarang. Gestun all paylater & kartu kredit cair hari ini juga!
+      </p>
+      <div class="hero-cta">
+        <a href="#brands" class="btn-primary">Lihat Katalog HP</a>
+        <a href="#services" class="btn-secondary">Layanan Kami</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURES STRIP -->
+  <div class="features">
+    <div class="feature">
+      <div class="feature-icon f1">🏬</div>
+      <span>Buka 24 Jam Non-Stop</span>
+    </div>
+    <div class="feature">
+      <div class="feature-icon f2">⚡</div>
+      <span>COD Seluruh Semarang</span>
+    </div>
+    <div class="feature">
+      <div class="feature-icon f3">💳</div>
+      <span>Gestun All Paylater</span>
+    </div>
+    <div class="feature">
+      <div class="feature-icon f4">✅</div>
+      <span>Garansi & Tukar Tambah</span>
+    </div>
+  </div>
+
+  <!-- BRAND HP -->
+  <section id="brands">
+    <div class="section-title">
+      <h2>Pilih Brand Favorit Kamu</h2>
+      <p>Kami jual semua brand HP, kamu tinggal pilih dan gas</p>
+    </div>
+    <div class="brand-grid">
+      <div class="brand-card">
+        <div class="brand-logo"></div>
+        <div class="brand-name">Apple</div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-logo">📱</div>
+        <div class="brand-name">Samsung</div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-logo">🟠</div>
+        <div class="brand-name">Xiaomi</div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-logo">🔵</div>
+        <div class="brand-name">Oppo</div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-logo">🟣</div>
+        <div class="brand-name">Vivo</div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-logo">⚡</div>
+        <div class="brand-name">Realme</div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-logo">🔷</div>
+        <div class="brand-name">Infinix</div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-logo">🔥</div>
+        <div class="brand-name">Poco</div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-logo">🧠</div>
+        <div class="brand-name">Nothing</div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-logo">🎮</div>
+        <div class="brand-name">Asus ROG</div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-logo">🟢</div>
+        <div class="brand-name">Tecno</div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-logo">🆕</div>
+        <div class="brand-name">Lainnya</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="section-title">
+      <h2>Layanan Kami</h2>
+      <p>Semua kebutuhan hp kamu, kami cover semua</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="svc-icon">🛒</div>
+        <h3>Jual Beli HP Baru</h3>
+        <p>Stok lengkap HP baru semua brand. Harga grosir, langsung ambil di toko atau COD ke lokasi kamu se-Smarang.</p>
+        <span class="svc-tag">Harga Grosir</span>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon">♻️</div>
+        <h3>Jual Beli HP Bekas</h3>
+        <p>Mau jual hp lama? Kami beli dengan harga pass. Mau beli hp bekas berkualitas? Stok kami terjamin dan bergaransi.</p>
+        <span class="svc-tag">Bergaransi</span>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon">🚗</div>
+        <h3>COD 24 Jam</h3>
+        <p>Cash on Delivery 24 jam non-stop. Tinggal chat WhatsApp, kasih alamat, hp sampai depan rumah kamu.</p>
+        <span class="svc-tag">Se-Semarang</span>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon">💳</div>
+        <h3>Gestun All Paylater</h3>
+        <p>Gestun semua paylater & kartu kredit. Limit dicairkan hari ini juga. Proses cepat, aman, tanpa ribet.</p>
+        <span class="svc-tag">Cair Hari Ini</span>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon">🔄</div>
+        <h3>Tukar Tambah</h3>
+        <p>Punya hp lama? Tukar tambah dengan hp baru di toko. Lelih diisi, hp baru langsung bawa pulang.</p>
+        <span class="svc-tag">Mudah</span>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon">🛡️</div>
+        <h3>Garansi Toko</h3>
+        <p>Setiap pembelian mendapat garansi toko. Hp bermasalah? Bawa kembali, kami bantu cek dan service.</p>
+        <span class="svc-tag">Terpercaya</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- GESTUN PAYLATER -->
+  <section id="gestun">
+    <div class="paylater-section">
+      <div class="section-title" style="margin-bottom: 20px;">
+        <h2>Gestun All Paylater & Kartu Kredit</h2>
+        <p>Limit kamu jadi uang tunai hari ini juga. Proses aman, cepat, terpercaya.</p>
+      </div>
+      <div class="paylater-grid">
+        <div class="paylater-item">ShopeePayLater</div>
+        <div class="paylater-item">Akulaku</div>
+        <div class="paylater-item">Kredivo</div>
+        <div class="paylater-item">Jenius PayLater</div>
+        <div class="paylater-item">Traveloka PayLater</div>
+        <div class="paylater-item">Indodana</div>
+        <div class="paylater-item">Atome</div>
+        <div class="paylater-item">Sprinpay</div>
+        <div class="paylater-item">Limit CC Visa</div>
+        <div class="paylater-item">Limit CC Mastercard</div>
+        <div class="paylater-item">BRI</div>
+        <div class="paylater-item">BCA</div>
+        <div class="paylater-item">Mandiri</div>
+        <div class="paylater-item">BNI</div>
+        <div class="paylater-item">Danamon</div>
+        <div class="paylater-item">CIMB</div>
+        <div class="paylater-item">Lainnya</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARKETING QUOTE -->
+  <div class="marketing-strip">
+    <h2>"Beli HP itu bukan <span class="grad">gaya hidup</span>, tapi <span class="grad">kebutuhan</span>.<br>Kami bikin beli HP gak bikin kantong <span class="grad">nangis</span>."</h2>
+    <p>— Sulthan BU Phone, Solusi HP Semarang</p>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <section>
+    <div class="section-title">
+      <h2>Kata Mereka</h2>
+      <p>Penilaian langsung dari pelanggan kami</p>
+    </div>
+    <div class="testimonials">
+      <div class="testimonial">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>"Langsung COD jam 2 pagi, hp sampe dalam 30 menit. Mantap Sulthan BU Phone!"</p>
+        <div class="author">Rizal — <span>Pedurungan, Semarang</span></div>
+      </div>
+      <div class="testimonial">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>"Gestun ShopeePayLater cair 10 menit. Anjir cepet banget, gas terus kak!"</p>
+        <div class="author">Dinda — <span>Tlogosari, Semarang</span></div>
+      </div>
+      <div class="testimonial">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>"Tukar tambah iPhone 12 ke 13 Pro Max, beda harga pass banget. Recommended!"</p>
+        <div class="author">Bagas — <span>Banyumanik, Semarang</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="lokasi" style="padding-top: 20px;">
+    <div class="cta-section">
+      <h2>Siap Beli HP atau Gestun?</h2>
+      <p>Chat WhatsApp sekarang, langsung dibalas 24 jam. COD se-Semarang, gestun cair hari ini juga!</p>
+      <a href="https://wa.me/6281585857577" target="_blank" class="btn-primary">Chat WhatsApp Sekarang</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">Sulthan BU Phone</div>
+      <div class="footer-addr">
+        Jl. Syuhada Raya No. 32, Tlogosari Kulon, Pedurungan, Kota Semarang<br>
+        Buka 24 Jam &middot; WhatsApp: <a href="https://wa.me/6281585857577" style="color:#25D366;text-decoration:none;">0815-8585-7577</a>
+      </div>
+      <div class="footer-links">
+        <a href="#brands">Brand HP</a>
+        <a href="#services">Layanan</a>
+        <a href="#gestun">Gestun</a>
+        <a href="https://wa.me/6281585857577" target="_blank">WhatsApp</a>
+        <a href="https://maps.google.com/?q=Jl.+Syuhada+Raya+No.+32+Tlogosari+Kulon+Pedurungan+Semarang" target="_blank">Google Maps</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Sulthan BU Phone. Jual Beli HP Baru & Bekas &middot; COD 24 Jam &middot; Gestun All Paylater &middot; Semarang
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/6281585857577" target="_blank" class="wa-float" aria-label="Chat WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.89-11.892a11.815 11.815 0 00-3.486-8.413Z"/></svg>
+  </a>
+
+  <!-- INTERSECTION OBSERVER FOR ANIMATIONS -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.brand-card, .service-card, .testimonial, .paylater-item').forEach(el => {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  </script>
